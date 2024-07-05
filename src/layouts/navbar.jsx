@@ -43,7 +43,7 @@ const DesktopNav = () => (
       </NavItem>
     ))}
     <NavItem
-      to="/shopping-cart"
+      to="/new-shopping-cart"
       className="flex items-center gap-2 text-lg font-semibold md:text-base"
     >
       <ShoppingCart className="h-6 w-6" />
@@ -75,7 +75,7 @@ const MobileNav = () => (
           </NavItem>
         ))}
         <NavItem
-          to="/shopping-cart"
+          to="/new-shopping-cart"
           className="flex items-center gap-2 text-lg font-semibold"
         >
           <ShoppingCart className="h-6 w-6" />

@@ -5,6 +5,7 @@ import { FileText, ShoppingCart } from "lucide-react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./layouts/sidebar"; // Use sidebar layout
 import Index from "./pages/Index.jsx";
+import ShoppingCartPage from "./pages/ShoppingCart.jsx"; // Import the new ShoppingCart component
 const queryClient = new QueryClient();
 
 export const navItems = [
@@ -29,6 +30,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Index />} />
+              <Route path="shopping-cart" element={<ShoppingCartPage />} /> {/* Add the new route */}
               {/* Add more routes here as needed */}
             </Route>
           </Routes>

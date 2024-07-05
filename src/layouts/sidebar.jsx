@@ -48,10 +48,6 @@ const Sidebar = () => (
               {item.title}
             </SidebarNavLink>
           ))}
-          <SidebarNavLink to="/shopping-cart">
-            <ShoppingCart className="h-6 w-6" />
-            Shopping Cart
-          </SidebarNavLink>
         </nav>
       </div>
     </div>
@@ -80,10 +76,6 @@ const MobileSidebar = () => (
             {item.title}
           </SidebarNavLink>
         ))}
-        <SidebarNavLink to="/shopping-cart">
-          <ShoppingCart className="h-6 w-6" />
-          Shopping Cart
-        </SidebarNavLink>
       </nav>
     </SheetContent>
   </Sheet>
