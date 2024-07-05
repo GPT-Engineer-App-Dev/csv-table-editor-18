@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, FileText } from "lucide-react";
+import { CircleUser, Menu, FileText, ShoppingCart } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 import { navItems } from "../App";
 
@@ -48,6 +48,10 @@ const Sidebar = () => (
               {item.title}
             </SidebarNavLink>
           ))}
+          <SidebarNavLink to="/shopping-cart">
+            <ShoppingCart className="h-6 w-6" />
+            Shopping Cart
+          </SidebarNavLink>
         </nav>
       </div>
     </div>
@@ -76,6 +80,10 @@ const MobileSidebar = () => (
             {item.title}
           </SidebarNavLink>
         ))}
+        <SidebarNavLink to="/shopping-cart">
+          <ShoppingCart className="h-6 w-6" />
+          Shopping Cart
+        </SidebarNavLink>
       </nav>
     </SheetContent>
   </Sheet>
