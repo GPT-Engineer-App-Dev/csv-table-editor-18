@@ -1,9 +1,27 @@
 import React from "react";
-import { useProducts } from "@/integrations/supabase";
+import { useProducts, useAddShoppingCart } from "@/integrations/supabase";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+
 const Index = () => {
+  const addShoppingCart = useAddShoppingCart();
+
+  const handleAddToCart = (productId) => {
+    addShoppingCart.mutate(
+      { product_id: productId, quantity: 1, user_id: "user-id-placeholder" }, // Replace with actual user ID
+      {
+        onSuccess: () => {
+          toast("Product added to cart");
+        },
+        onError: () => {
+          toast("Failed to add product to cart");
+        },
+      }
+    );
+  };
   const { data: products, error, isLoading } = useProducts();
 
   if (isLoading) {
@@ -33,6 +51,7 @@ const Index = () => {
             <CardContent>
               <img src={product.image_url} alt={product.name} className="w-full h-48 object-cover mb-4" />
               <p className="text-lg font-semibold">${product.price}</p>
+              <Button onClick={() => handleAddToCart(product.id)}>Add to Cart</Button>
             </CardContent>
           </Card>
         ))}

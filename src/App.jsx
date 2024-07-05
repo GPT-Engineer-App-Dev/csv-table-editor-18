@@ -10,7 +10,7 @@ const queryClient = new QueryClient();
 
 export const navItems = [
   {
-    title: "CSV Tool",
+    title: "Products", // Renamed from "CSV Tool" to "Products"
     to: "/",
     icon: <FileText className="h-4 w-4" />,
   },
