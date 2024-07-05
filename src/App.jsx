@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { FileText } from "lucide-react";
+import { FileText, ShoppingCart } from "lucide-react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./layouts/sidebar"; // Use sidebar layout
 import Index from "./pages/Index.jsx";
@@ -9,9 +9,14 @@ const queryClient = new QueryClient();
 
 export const navItems = [
   {
-    title: "CSV Tool", // Updated title
+    title: "CSV Tool",
     to: "/",
-    icon: <FileText className="h-4 w-4" />, // Updated icon
+    icon: <FileText className="h-4 w-4" />,
+  },
+  {
+    title: "Shopping Cart",
+    to: "/shopping-cart",
+    icon: <ShoppingCart className="h-4 w-4" />,
   },
 ];
 
